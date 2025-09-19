@@ -49,7 +49,7 @@ export const PuzzlePiece = ({ id, message, isRevealed, onReveal, className = "" 
             </div>
           </div>
         ) : (
-          <div className="relative z-10 text-sm md:text-base font-semibold text-foreground leading-relaxed">
+          <div className="relative z-10 text-sm md:text-base font-bold text-foreground leading-relaxed drop-shadow-sm">
             {message}
           </div>
         )}

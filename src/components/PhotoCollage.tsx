@@ -41,16 +41,11 @@ export const PhotoCollage = ({ isVisible }: PhotoCollageProps) => {
           🎉 Happy Birthday Pucchu! 🎉
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           {photos.map((photo, index) => (
             <div
               key={index}
-              className={`
-                relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300
-                ${index % 3 === 0 ? 'md:row-span-2' : ''}
-                ${index % 4 === 1 ? 'lg:col-span-2' : ''}
-                hover:scale-105 float-gentle
-              `}
+              className="break-inside-avoid relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 float-gentle"
               style={{ 
                 animationDelay: `${index * 0.2}s`
               }}
@@ -58,13 +53,9 @@ export const PhotoCollage = ({ isVisible }: PhotoCollageProps) => {
               <img
                 src={photo.src}
                 alt={photo.alt}
-                className="w-full h-full object-cover"
-                style={{ 
-                  minHeight: index % 3 === 0 ? '300px' : '200px',
-                  maxHeight: '400px'
-                }}
+                className="w-full h-auto object-cover rounded-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
             </div>
           ))}
         </div>

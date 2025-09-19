@@ -8,13 +8,13 @@
   :root {
     /* Pastel Color Palette */
     --background: 300 40% 98%;
-    --foreground: 260 15% 25%;
+    --foreground: 260 25% 15%;
 
     --card: 320 35% 96%;
-    --card-foreground: 260 15% 25%;
+    --card-foreground: 260 25% 15%;
 
     --popover: 320 35% 96%;
-    --popover-foreground: 260 15% 25%;
+    --popover-foreground: 260 25% 15%;
 
     /* Pastel Primary - Soft Lavender */
     --primary: 270 50% 75%;
@@ -36,7 +36,7 @@
     --pastel-yellow-glow: 50 65% 92%;
 
     --muted: 300 20% 92%;
-    --muted-foreground: 260 10% 45%;
+    --muted-foreground: 260 20% 35%;
 
     --destructive: 0 70% 70%;
     --destructive-foreground: 0 0% 100%;
@@ -175,9 +175,9 @@
 
   /* Glowing Text */
   .glow-text {
-    @apply font-bold text-transparent bg-clip-text;
-    background-image: var(--gradient-dreamy);
-    text-shadow: 0 0 20px hsl(var(--primary-glow) / 0.5);
+    @apply font-bold;
+    color: hsl(var(--foreground));
+    text-shadow: 0 0 20px hsl(var(--primary-glow) / 0.8), 0 2px 4px hsl(var(--foreground) / 0.3);
     animation: text-glow 2s ease-in-out infinite alternate;
   }
 
