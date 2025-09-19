@@ -44,8 +44,8 @@ export const PuzzlePiece = ({ id, message, isRevealed, onReveal, className = "" 
       >
         {!isRevealed ? (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center">
-              <span className="text-2xl">🧩</span>
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/30">
+              <span className="text-3xl animate-pulse">💖</span>
             </div>
           </div>
         ) : (

@@ -65,9 +65,10 @@
     --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.6);
     --shadow-sparkle: 0 0 20px hsl(var(--accent-glow) / 0.8);
 
-    /* Animations */
-    --transition-magical: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    --transition-soft: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Smooth Animations */
+    --transition-magical: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-soft: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -139,16 +140,17 @@
 @layer components {
   /* Puzzle Piece Variants */
   .puzzle-piece {
-    @apply relative cursor-pointer transition-all duration-500 ease-out transform-gpu;
+    @apply relative cursor-pointer transform-gpu;
     background: var(--gradient-sparkle);
     border-radius: 15px;
     box-shadow: var(--shadow-soft);
+    transition: var(--transition-magical);
   }
 
   .puzzle-piece:hover {
     @apply scale-105;
     box-shadow: var(--shadow-glow);
-    animation: gentle-float 2s ease-in-out infinite;
+    animation: gentle-float 3s ease-in-out infinite;
   }
 
   .puzzle-piece-1 { background-color: hsl(var(--puzzle-piece-1)); }
@@ -160,17 +162,18 @@
 
   /* Magical Button */
   .birthday-button {
-    @apply relative px-8 py-4 rounded-full font-semibold transition-all duration-300;
+    @apply relative px-8 py-4 rounded-full font-semibold;
     background: var(--gradient-dreamy);
     color: hsl(var(--primary-foreground));
     box-shadow: var(--shadow-soft);
     border: 2px solid hsl(var(--primary-glow) / 0.3);
+    transition: var(--transition-bounce);
   }
 
   .birthday-button:hover {
-    @apply scale-105;
+    @apply scale-110;
     box-shadow: var(--shadow-glow);
-    animation: sparkle-pulse 1.5s ease-in-out infinite;
+    animation: sparkle-pulse 2s ease-in-out infinite;
   }
 
   /* Glowing Text */
@@ -207,8 +210,15 @@
 }
 
 @keyframes gentle-float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(1deg); }
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) scale(1); 
+  }
+  33% { 
+    transform: translateY(-8px) rotate(0.5deg) scale(1.02); 
+  }
+  66% { 
+    transform: translateY(-12px) rotate(-0.5deg) scale(1.01); 
+  }
 }
 
 @keyframes sparkle-pulse {
@@ -234,8 +244,13 @@
     transform: rotateY(-90deg) scale(0.8);
     opacity: 0;
   }
-  50% {
-    transform: rotateY(0deg) scale(1.05);
+  30% {
+    transform: rotateY(-45deg) scale(0.9);
+    opacity: 0.3;
+  }
+  70% {
+    transform: rotateY(15deg) scale(1.08);
+    opacity: 0.8;
   }
   100% {
     transform: rotateY(0deg) scale(1);
@@ -270,7 +285,7 @@
 }
 
 .flip-animation {
-  animation: flip-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: flip-in 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .confetti-burst {

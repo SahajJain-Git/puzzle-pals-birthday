@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PuzzlePiece } from "./PuzzlePiece";
-import birthdayCake from "@/assets/birthday-cake.jpg";
+import birthdayCelebration from "@/assets/birthday-celebration.jpg";
 
 const puzzleMessages = [
   "To the most amazing sister 💖",
@@ -78,9 +78,9 @@ export const PuzzleBoard = ({ onComplete }: PuzzleBoardProps) => {
         <div className="text-center fade-in-up">
           <div className="mb-8">
             <img 
-              src={birthdayCake} 
-              alt="Birthday cake with balloons" 
-              className="w-80 h-60 md:w-96 md:h-72 object-cover rounded-3xl shadow-2xl mx-auto float-gentle"
+              src={birthdayCelebration} 
+              alt="Pucchu's birthday celebration with cake and decorations" 
+              className="w-80 h-60 md:w-96 md:h-72 object-cover rounded-3xl shadow-2xl mx-auto float-gentle border-4 border-white/20 backdrop-blur-sm"
             />
           </div>
           

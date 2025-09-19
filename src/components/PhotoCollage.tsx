@@ -45,9 +45,10 @@ export const PhotoCollage = ({ isVisible }: PhotoCollageProps) => {
           {photos.map((photo, index) => (
             <div
               key={index}
-              className="break-inside-avoid relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 float-gentle"
+              className="break-inside-avoid relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 float-gentle border-2 border-white/10 backdrop-blur-sm"
               style={{ 
-                animationDelay: `${index * 0.2}s`
+                animationDelay: `${index * 0.2}s`,
+                transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
               }}
             >
               <img
