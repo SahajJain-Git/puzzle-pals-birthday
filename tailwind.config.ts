@@ -22,10 +22,12 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          glow: "hsl(var(--secondary-glow))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -38,6 +40,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          glow: "hsl(var(--accent-glow))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -56,6 +59,19 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        // Pastel Birthday Theme
+        pastel: {
+          yellow: "hsl(var(--pastel-yellow))",
+          "yellow-glow": "hsl(var(--pastel-yellow-glow))",
+        },
+        puzzle: {
+          1: "hsl(var(--puzzle-piece-1))",
+          2: "hsl(var(--puzzle-piece-2))",
+          3: "hsl(var(--puzzle-piece-3))",
+          4: "hsl(var(--puzzle-piece-4))",
+          5: "hsl(var(--puzzle-piece-5))",
+          6: "hsl(var(--puzzle-piece-6))",
         },
       },
       borderRadius: {
